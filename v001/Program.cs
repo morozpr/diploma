@@ -1,10 +1,17 @@
 using v001.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+// var connectionString = builder.Configuration.GetConnectionString("DiplomaDbConnection") ?? throw new InvalidOperationException("Connection string 'DiplomaDbContextConnection' not found.");
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<DiplomaDbContext>();
+
+builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = false).AddEntityFrameworkStores<DiplomaDbContext>();
+
+builder.Services.AddRazorPages();
 
 var app = builder.Build();
 

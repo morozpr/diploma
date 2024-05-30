@@ -10,6 +10,7 @@ using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading;
 using System.Threading.Tasks;
+using Humanizer;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -98,6 +99,19 @@ namespace v001.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+            
+            [Required]
+            [Display(Name = "FirstName")]
+            public string FirstName { get; set; }
+
+            
+            [Required]
+            [Display(Name = "SecondName")]
+            public string SecondName { get; set; }
+            
+            [Required]
+            [Display(Name = "Patronymic")]
+            public string Patronymic { get; set; }
         }
 
 
@@ -115,6 +129,10 @@ namespace v001.Areas.Identity.Pages.Account
             {
                 var user = CreateUser();
 
+                user.FirstName = Input.FirstName;
+                user.SecondName = Input.SecondName;
+                user.Patronymic = Input.Patronymic;
+                
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
                 var result = await _userManager.CreateAsync(user, Input.Password);
