@@ -1,0 +1,37 @@
+﻿@page
+@model v001.Pages.Root.MainPage
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title></title>
+</head>
+<body>
+<div>
+    
+          <asp:Calendar id="calendar1">
+    
+               <OtherMonthDayStyle ForeColor="LightGray">
+               </OtherMonthDayStyle>
+    
+               <TitleStyle BackColor="Blue"
+                           ForeColor="White">
+               </TitleStyle>
+    
+               <DayStyle BackColor="gray">
+               </DayStyle>
+    
+               <SelectedDayStyle BackColor="LightGray"
+                                 Font-Bold="True">
+               </SelectedDayStyle>
+    
+          </asp:Calendar>
+      
+</div>
+</body>
+</html>
