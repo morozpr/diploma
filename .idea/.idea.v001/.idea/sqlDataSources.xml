@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="0e478e71-fa9d-43e0-8dd4-de69be1420bf" name="DDL Mapping">
+      <data-sources db="498aa154-aa66-4deb-9499-563f97e6aced" ddl="5f18e136-3d09-4e9f-84f9-a01030fb7e00" />
+      <scope>
+        <node kind="database" qname="diplomaDB">
+          <node kind="schema" negative="1" />
+        </node>
+      </scope>
+    </mapping>
+  </component>
+</project>
